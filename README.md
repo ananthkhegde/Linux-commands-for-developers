@@ -112,4 +112,70 @@ sudo systemctl start nginx
 check status of nginx
 sudo systemctl status nginx
 
+su postgres 
+
+pg_restore  -h 172.16.0.172 -p 5432 -U postgres -d cstem_pt -v /ptdatabase.backup
+
+>pg_dump -U postgres -W -F t anganwadi> /homep/test/anganwadi.tar
+http://www.postgresqltutorial.com/postgresql-backup-database/
+
+execure this command inside lpostgres
+keep ptdatabase.backup inside /root
+
+
+ psql -h 172.16.0.172 -U postgres cstem_pv
+
+ psql -h 172.16.0.172 -U postgres cstem_pv -c "select * from cstem_pagecount" --enter from postgres user
+
+service tomcat8 start
+service tomcat8 stop
+
+to go downloads foklder cd /home/<user>/downloads
+
+guide to install pycharm project in centos
+https://www.youtube.com/watch?v=knZN5pblVYY
+
+
+create and activate virtual environment in python for centos
+https://blog.teststation.org/centos/python/2016/05/11/installing-python-virtualenv-centos-7/
+
+pip install numpy
+pip install scipy
+pip install cmake
+ yum install gcc-c++
+pip install dlib
+
+installing python 3.6.1
+https://www.youtube.com/watch?v=39LiVYtNTzY
+
+./configure CFLAG=-fPIC 
+
+to run python:
+activate virtual environment
+execute this: go to project folder
+python manage.py runserver 172.16.1.132:8000
+
+
+--run this command if sequences are out of range
+SELECT MAX(child_growth_rec_id) FROM child_growth;
+SELECT nextval('child_growth_child_growth_rec_id_seq');
+
+SELECT setval('child_growth_child_growth_rec_id_seq', (SELECT MAX(child_growth_rec_id) FROM child_growth)+1);  //http://hcmc.uvic.ca/blogs/index.php?blog=22&p=8105&more=1&c=1&tb=1&pb=1
+
+
+
+generate sql insert command for table
+Right-click on your table and pick option Backup..
+On File Options, set Filepath/Filename and pick PLAIN for Format
+Ignore Dump Options #1 tab
+In Dump Options #2 tab, check USE INSERT COMMANDS
+Hit Backup button
+
+pg_restore  -h localhost -p 5432 -U postgres -d anganwadi -v AnganwadiDBBackup_23rdNov2017
+
+
+
+
+
+
 
